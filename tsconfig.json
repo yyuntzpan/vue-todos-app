@@ -2,6 +2,17 @@
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+    { "path": "./tsconfig.node.json" },
+    
+  ],
+  "compilerOptions": {
+    // ... other options ...
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@vue/runtime-core": ["./node_modules/@vue/runtime-core/dist/runtime-core.d.ts"]
+    }
+  }
 }
+
+  
