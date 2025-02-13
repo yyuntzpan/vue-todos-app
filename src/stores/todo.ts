@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 interface Todo {
   id: number;
-  title: string;
+  text: string;
   isCheck: boolean;
 }
 interface TodoState {
@@ -22,10 +22,10 @@ export const useTodosStore = defineStore('todo', {
     }
   },
   actions:{
-    addTodo(title:string){
+    addTodo(text:string){
       const newTodo: Todo = {
         id: Date.now(),
-        title,
+        text,
         isCheck: false
       }
       this.todos.push(newTodo)
