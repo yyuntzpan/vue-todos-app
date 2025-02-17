@@ -5,9 +5,12 @@ interface Todo {
   text: string;
   isCheck: boolean;
 }
+
 interface TodoState {
   todos: Todo[];
 }
+
+let todoId = 0
 
 export const useTodosStore = defineStore('todo', {
   state: (): TodoState => ({
@@ -23,12 +26,17 @@ export const useTodosStore = defineStore('todo', {
   },
   actions:{
     addTodo(text:string){
+      console.log('Adding todo:', text)
+
       const newTodo: Todo = {
-        id: Date.now(),
-        text,
+        id: ++todoId,
+        text: text.trim(),
         isCheck: false
       }
+
       this.todos.push(newTodo)
+
+      console.log('Current todos:', this.todos)
     },
     deleteTodo(id:number){
       const index = this.todos.findIndex(todo => todo.id === id)
