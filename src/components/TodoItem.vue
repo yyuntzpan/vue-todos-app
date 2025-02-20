@@ -1,9 +1,18 @@
 <template>
   <li class="list">
-    <input type="checkbox" v-model="todo.isCheck" />
-    <span :class="{ isCheck: todo.isCheck }">
-      {{ todo.text }}
-    </span>
+    <div class="item-box">
+      <input
+        :id="todo.id"
+        name="checkbox"
+        type="checkbox"
+        v-model="todo.isCheck"
+        class="checkbox"
+      />
+      <label :for="todo.id" :class="['todo-text', { isCheck: todo.isCheck }]">
+        {{ todo.text }}
+      </label>
+    </div>
+
     <button @click="todosStore.deleteTodo(todo.id)">x</button>
   </li>
 </template>
@@ -28,12 +37,30 @@ const todosStore = useTodosStore();
   align-items: center;
   margin-bottom: 0.5rem;
 }
+
+.item-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.todo-text {
+  width: 100%;
+  cursor: pointer;
+}
 .isCheck {
   opacity: 0.5;
+  text-decoration: line-through;
 }
 button {
-  margin-left: 10px;
-  padding: 0.5rem 0.8rem;
-  border-radius: 0.8rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #414141;
 }
 </style>
