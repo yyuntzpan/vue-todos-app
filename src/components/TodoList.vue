@@ -1,20 +1,29 @@
 <template>
   <div>
-    <ul class="left">
-      <TodoItem v-for="todo in todosStore.todos" :key="todo.id" :todo="todo" />
+    <ul class="unordered">
+      <TodoItem v-for="todo in sortedTodos" :key="todo.id" :todo="todo" />
     </ul>
   </div>
 </template>
 
 <script setup>
+import { computed } from "vue";
 import { useTodosStore } from "../stores/todo.ts";
 import TodoItem from "./TodoItem.vue";
 
 const todosStore = useTodosStore();
+const sortedTodos = computed(() => {
+  return [...todosStore.todos].sort((a, b) => {
+    if (a.isCheck && !b.isCheck) return 1;
+    if (!a.isCheck && b.isCheck) return -1;
+    return 0;
+  });
+});
 </script>
 
 <style scoped>
-.left {
+.unordered {
+  padding-left: 0.3rem;
   text-align: left;
 }
 
