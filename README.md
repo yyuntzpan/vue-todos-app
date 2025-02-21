@@ -22,7 +22,7 @@
 ### Links
 
 - Github URL: [Code](https://github.com/yyuntzpan/vue-todos-app.git)
-- Live Site URL: [To-do App]()
+- Live Site URL: [To-do App](https://vue-todos-app-sooty.vercel.app/)
 
 ## 技術應用
 
