@@ -14,7 +14,7 @@ let todoId = 0
 
 export const useTodosStore = defineStore('todo', {
   state: (): TodoState => ({
-    todos: []
+    todos: [] as Todo[],
   }),
   getters:{
     completedTodos(): Todo[]{

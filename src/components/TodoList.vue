@@ -6,9 +6,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
-import { useTodosStore } from "../stores/todo.ts";
+import { useTodosStore } from "../stores/todo";
 import TodoItem from "./TodoItem.vue";
 
 const todosStore = useTodosStore();

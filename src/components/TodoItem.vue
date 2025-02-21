@@ -17,8 +17,8 @@
   </li>
 </template>
 
-<script setup>
-import { useTodosStore } from "../stores/todo.ts";
+<script setup lang="ts">
+import { useTodosStore } from "../stores/todo";
 
 const props = defineProps({
   todo: {

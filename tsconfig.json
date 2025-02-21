@@ -1,18 +1,28 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" },
-    
-  ],
   "compilerOptions": {
-    // ... other options ...
+    "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "types": ["vite/client", "vue"],
     "paths": {
+      "@/*": ["src/*"],
       "@vue/runtime-core": ["./node_modules/@vue/runtime-core/dist/runtime-core.d.ts"]
-    }
-  }
+    },
+    "lib": ["esnext", "dom"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "components.d.ts"
+  ],
+  "exclude": ["node_modules"]
 }
-
-  

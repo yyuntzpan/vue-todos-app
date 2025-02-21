@@ -15,9 +15,9 @@
   </form>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed, ref } from "vue";
-import { useTodosStore } from "../stores/todo.ts";
+import { useTodosStore } from "../stores/todo";
 
 const newTodo = ref("");
 const showError = ref(false);
