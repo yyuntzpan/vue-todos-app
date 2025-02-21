@@ -10,7 +10,8 @@
       @focus="showError = false"
     />
     <button type="submit" :disabled="!canAdd" :class="{ disabled: !canAdd }">
-      Add Todo
+      <span class="full-text">Add Todo</span>
+      <span class="short-text">Add</span>
     </button>
   </form>
 </template>
@@ -57,5 +58,17 @@ button {
   color: #dc3545;
   font-size: 0.875rem;
   margin-top: 0.25rem;
+}
+.short-text {
+  display: none;
+}
+
+@media (max-width: 375px) {
+  .full-text {
+    display: none;
+  }
+  .short-text {
+    display: inline;
+  }
 }
 </style>
