@@ -1,6 +1,6 @@
 :root {
-  --color-text: #213547;
-  --bg-color: #ffffff;
+  --color-text: rgba(255, 255, 255, 0.87);
+  --bg-color: #242424;
   --link-color: #646cff;
   --link-hover: #535bf2;
   --button-text: #ffffff;
