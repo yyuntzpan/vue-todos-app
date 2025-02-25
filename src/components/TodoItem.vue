@@ -13,12 +13,21 @@
       </label>
     </div>
 
-    <button @click="todosStore.deleteTodo(todo.id)">x</button>
+    <button @click="todosStore.deleteTodo(todo.id)">
+      <Icon
+        icon="si:close-fill"
+        width="24"
+        height="24"
+        style="color: var(--color-text)"
+      />
+    </button>
   </li>
 </template>
 
 <script setup lang="ts">
 import { useTodosStore } from "../stores/todo";
+import { defineProps } from "vue";
+import { Icon } from "@iconify/vue";
 
 const props = defineProps({
   todo: {
@@ -53,7 +62,13 @@ const todosStore = useTodosStore();
   opacity: 0.5;
   text-decoration: line-through;
 }
+.icon {
+  color: var(--color-text);
+}
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 2rem;
   height: 2rem;
   padding: 0;
@@ -61,6 +76,6 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background-color: #414141;
+  background-color: var(--color-);
 }
 </style>
