@@ -19,6 +19,7 @@ const setTheme = (theme: "dark" | "light" | "auto") => {
   if (theme === "auto") {
     localStorage.removeItem("theme-preference");
     isDark.value = prefersDark;
+    document.documentElement.classList.add(prefersDark ? "dark" : "light");
   } else {
     document.documentElement.classList.add(theme);
     localStorage.setItem("theme-preference", theme);
