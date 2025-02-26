@@ -4,7 +4,7 @@
       id="todo"
       name="todo"
       v-model="newTodo"
-      class="text"
+      class="input"
       type="text"
       placeholder="new todo"
       @focus="showError = false"
@@ -50,7 +50,8 @@ button {
   border-radius: 0.8rem;
 }
 
-.text {
+.input {
+  font-size: 1rem;
   padding: 0.5rem 0.8rem;
   border-radius: 0.8rem;
 }

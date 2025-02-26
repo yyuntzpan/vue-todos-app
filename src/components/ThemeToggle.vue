@@ -52,12 +52,12 @@ button {
   justify-content: center;
   align-items: center;
   top: 1rem;
-  right: 1rem;
+  right: 1.5rem;
   padding: 0.6rem;
 }
 .icon {
   position: relative;
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 </style>
