@@ -6,6 +6,7 @@
       v-model="newTodo"
       class="input"
       type="text"
+      enterkeyhint="done"
       placeholder="new todo"
       @focus="showError = false"
     />
